@@ -14,7 +14,7 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String gotoLoginPage(@RequestParam String name, ModelMap model) {
 		System.out.println("request param is  "+name); //Dont do this in production
-		model.put("name", name);
+		model.put("name ", name);
 		return "login";
 	} 
 }
