@@ -4,5 +4,5 @@
 	</head>
 	<body>	
 
-	Welcome to login page </body>
+	Welcome to login page ${name}</body>
 </html>

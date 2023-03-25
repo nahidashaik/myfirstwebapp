@@ -6,6 +6,6 @@
 		<h1>heading 1</h1>
 	
 		<h2>heading 2</h2>
-		My first html with body -jsp 
+		My first html with body - jsp 
 	</body>
 </html>
