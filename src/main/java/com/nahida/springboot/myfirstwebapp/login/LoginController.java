@@ -13,10 +13,7 @@ public class LoginController {
 	private Logger logger=LoggerFactory.getLogger(getClass());
 	//Model
 	@RequestMapping("/login")
-	public String gotoLoginPage(@RequestParam String name, ModelMap model) {
-		logger.debug("Request Param is {} "+name);
-//		System.out.println("request param is  "+name); //Dont do this in production
-		model.put("name ", name);
+	public String gotoLoginPage() {
 		return "login";
 	} 
 }
