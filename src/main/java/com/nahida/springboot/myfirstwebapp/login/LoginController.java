@@ -12,6 +12,11 @@ public class LoginController {
  //login redirected to com.nahida.springboot.myfirstwebapp.login.LoginController =>Login.jsp
 //http://localhost:8080/login?name=Nahida
 	private Logger logger=LoggerFactory.getLogger(getClass());
+	private AuthenticationService authenticationService; 
+	public LoginController(AuthenticationService authenticationService) {
+		super();
+		this.authenticationService = authenticationService;
+	} 
 	//Model
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public String gotoLoginPage() {
@@ -19,8 +24,16 @@ public class LoginController {
 	} 	
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String gotoWelcomePage(@RequestParam String name, @RequestParam String password, ModelMap model) {
+		if(authenticationService.authenticate(name, password)) {
 		model.put("name", name);
 		model.put("password", password);
+		
+		//Authentication
+		//Name:nahida
+		//Password:dummy
 		return "welcome";
-	} 
+		}
+		return "login";
+	}
+
 }
