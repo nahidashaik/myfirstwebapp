@@ -7,7 +7,7 @@ public class AuthenticationService {
 	//authenticate a user
 	public boolean authenticate(String username, String password) {
 		boolean isvalidUsername=username.equalsIgnoreCase("nahida");
-		boolean isvalidpassword= password.equalsIgnoreCase("dummy");
+		boolean isvalidpassword= password.equalsIgnoreCase("secret");
 		return isvalidUsername && isvalidpassword;
 	}
 }
